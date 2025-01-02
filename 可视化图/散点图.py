@@ -1,0 +1,66 @@
+from pyecharts.charts import EffectScatter
+import pyecharts.options as opts
+(
+    EffectScatter(init_opts=opts.InitOpts(width="1600px", height="1000px"))
+    .add_xaxis(xaxis_data=[10])
+    .add_yaxis(
+        series_name="",
+        y_axis=[10],
+        symbol="pin",
+        symbol_size=20,
+        label_opts=opts.LabelOpts(is_show=False)
+    )
+    .add_xaxis(xaxis_data=[20])
+    .add_yaxis(
+        series_name="",
+        y_axis=[20],
+        symbol="rect",
+        symbol_size=12,
+        label_opts=opts.LabelOpts(is_show=False)
+    )
+    .add_xaxis(xaxis_data=[30])
+    .add_yaxis(
+        series_name="",
+        y_axis=[30],
+        symbol="roundRect",
+        symbol_size=30,
+        label_opts=opts.LabelOpts(is_show=False)
+    )
+    .add_xaxis(xaxis_data=[40])
+    .add_yaxis(
+        series_name="",
+        y_axis=[40],
+        symbol="diamond",
+        symbol_size=10,
+        label_opts=opts.LabelOpts(is_show=False)
+    )
+    .add_xaxis(xaxis_data=[50])
+    .add_yaxis(
+        series_name="",
+        y_axis=[50],
+        symbol="triangle",
+        symbol_size=6,
+        label_opts=opts.LabelOpts(is_show=False)
+    )
+    .add_xaxis(xaxis_data=[60])
+    .add_yaxis(
+        series_name="",
+        y_axis=[60],
+        symbol="rect",
+        symbol_size=12,
+        label_opts=opts.LabelOpts(is_show=False)
+    )
+    .set_series_opts()
+    .set_global_opts(
+        xaxis_opts=opts.AxisOpts(
+            type_="value", splitline_opts=opts.SplitLineOpts(is_show=True)
+        ),
+        yaxis_opts=opts.AxisOpts(
+            type_="value",
+            axistick_opts=opts.AxisTickOpts(is_show=True),
+            splitline_opts=opts.SplitLineOpts(is_show=True),
+        ),
+        tooltip_opts=opts.TooltipOpts(is_show=True),
+    )
+    .render("散点图.html")
+)
